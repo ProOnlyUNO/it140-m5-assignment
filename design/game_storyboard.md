@@ -5,60 +5,43 @@
 
 ## Theme and Storyline
 
-**Theme:**
+## Theme
+An abandoned military base survival game where the player must explore the base and collect important equipment while avoiding an infected commander.
 
-TODO: Name and briefly describe your game's theme.
 
-**Storyline:**
-
-TODO: In one short paragraph, explain the setting, the player's goal, the items
-the player must gather, and the threat created by the villain.
-
+## Storyline
+The player wakes up inside an abandoned military base after a mysterious outbreak caused the base to be evacuated. A dangerous infected commander is still inside the base and is searching the different areas. The player must explore the base and collect a flashlight, pistol, medkit, radio, rations, and access card. The player must collect all six items before entering the Security Wing, where the infected commander is located. If the player enters the villain's room before collecting all of the items, the player loses the game.
 ## Rooms
 
-Project One requires a minimum of eight rooms.
 
-1. TODO: Start room
-2. TODO: Room
-3. TODO: Room
-4. TODO: Room
-5. TODO: Room
-6. TODO: Room
-7. TODO: Room
-8. TODO: Villain room
-
-Add more rooms if your design needs them.
-
+1. Main Gate - Start room
+2. Barracks
+3. Armory
+4. Medical Bay
+5. Communications Room
+6. Supply Warehouse
+7. Command Center
+8. Security Wing - Villain room
 ## Items
 
-With the minimum eight-room design, Project One requires at least six items.
-Every room except the start room and villain room must contain one item.
-
-1. TODO: Item
-2. TODO: Item
-3. TODO: Item
-4. TODO: Item
-5. TODO: Item
-6. TODO: Item
-
-If you add rooms beyond the minimum, add an item for every additional room
-except the start room and villain room.
-
+1. Flashlight - Barracks
+2. Pistol - Armory
+3. Medkit - Medical Bay
+4. Radio - Communications Room
+5. Rations - Supply Warehouse
+6. Access Card - Command Center
 ## Villain
 
-TODO: Identify and briefly describe the villain.
-
+The villain is the Infected Commander. The commander is located in the Security Wing of the military base. The player must avoid this room until all six items have been collected. If the player enters the Security Wing before collecting all six items, the game ends and the player loses.
 ## Storyboard and Map Check
-
 Before submitting, compare this storyboard with `game_map.drawio`.
-
-* [ ] I included eight (8) rooms.
-* [ ] I included six (6) collectable items.
-* [ ] The start room has no item.
-* [ ] The villain room has no item.
-* [ ] Every room except the start room and villain room contains one item.
-* [ ] Room, item, and villain names match my map.
-* [ ] The map allows the player to collect all required items before the
+* [x] I included eight (8) rooms.
+* [x] I included six (6) collectable items.
+* [x] The start room has no item.
+* [x] The villain room has no item.
+* [x] Every room except the start room and villain room contains one item.
+* [x] Room, item, and villain names match my map.
+* [x] The map allows the player to collect all required items before the
   villain is encountered.
 
 ## Project Two Handoff

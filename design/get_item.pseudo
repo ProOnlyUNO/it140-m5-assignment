@@ -1,33 +1,54 @@
-# Project One Get-Item Pseudocode
-#
-# Graded checkpoint: Module Five Project One
-# Later use: get-item and inventory design for M7 Project Two
-#
-# Review the course-provided get-item flowchart before completing this file.
-# Write pseudocode, not Python code. Use clear indentation and course-appropriate
-# keywords such as INPUT, OUTPUT, IF, ELSE, SET, ADD, or similar terms.
-
 START get_item
 
-    # TODO 1: Identify the information the get-item process needs.
-    # Consider the current room, item in that room, and player's inventory.
+# TODO 1: Identify the information the get-item process needs.
+# Consider the current room, item in that room, and player's inventory.
 
-    # TODO 2: Prompt for and receive the player's get-item command.
+SET current_room = current player room
+SET requested_item = ""
+SET inventory = player's current inventory
 
-    # TODO 3: Validate whether the requested item is available in the current
-    # room. Show the decision clearly.
+# TODO 2: Prompt for and receive the player's get-item command.
 
-    # TODO 4: Describe what happens when the item request is valid.
-    # Include the inventory update and player output.
+OUTPUT "Enter the item you want to get."
+INPUT requested_item
 
-    # TODO 5: Describe what happens when the item request is invalid.
-    # Include the output the player should receive.
+# TODO 3: Validate whether the requested item is available in the current
+# room. Show the decision clearly.
 
-    # TODO 6: Show how the process returns to or continues the larger gameplay
-    # loop after the command is handled.
+IF current_room = "Barracks" AND requested_item = "Flashlight"
+    SET item_available = TRUE
+ELSE IF current_room = "Armory" AND requested_item = "Pistol"
+    SET item_available = TRUE
+ELSE IF current_room = "Medical Bay" AND requested_item = "Medkit"
+    SET item_available = TRUE
+ELSE IF current_room = "Communications Room" AND requested_item = "Radio"
+    SET item_available = TRUE
+ELSE IF current_room = "Supply Warehouse" AND requested_item = "Rations"
+    SET item_available = TRUE
+ELSE IF current_room = "Command Center" AND requested_item = "Access Card"
+    SET item_available = TRUE
+ELSE
+    SET item_available = FALSE
+END IF
+
+# TODO 4: Describe what happens when the item request is valid.
+# Include the inventory update and player output.
+
+IF item_available = TRUE
+    ADD requested_item TO inventory
+    OUTPUT requested_item + " has been added to your inventory."
+
+# TODO 5: Describe what happens when the item request is invalid.
+# Include the output the player should receive.
+
+ELSE
+    OUTPUT "That item is not in this room."
+END IF
+
+# TODO 6: Show how the process returns to or continues the larger gameplay
+# loop after the command is handled.
+
+OUTPUT "Returning to the game."
+RETURN to main game loop
 
 END get_item
-
-
-# References
-

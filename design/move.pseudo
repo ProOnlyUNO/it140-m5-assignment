@@ -1,25 +1,149 @@
 # Project One Move-Between-Rooms Pseudocode
 #
-# Graded checkpoint: Module Five Project One
-# Later use: conceptual support for M6; movement design for M7
-#
-# Review the course-provided movement flowchart before completing this file.
-# Write pseudocode, not Python code. Use clear indentation and course-appropriate
-# keywords such as INPUT, OUTPUT, IF, ELSE, WHILE, SET, or similar terms.
+# Game: Operation: Last Stand
 
 # TODO 1: Identify the information the movement process needs.
-# Consider the player's current room and movement command.
+
+SET current_room = "Main Gate"
+SET movement_command = ""
+SET game_over = FALSE
 
 # TODO 2: Prompt for and receive the player's movement command.
 
-# TODO 3: Validate whether the requested movement is possible from the
-# current room. Show the decision clearly.
+OUTPUT "Enter a direction to move: north, south, east, or west."
+INPUT movement_command
 
-# TODO 4: Describe what happens when the movement command is valid.
-# Include the room update and player output.
+# TODO 3: Validate whether the requested movement is possible.
 
-# TODO 5: Describe what happens when the movement command is invalid.
-# Include the output the player should receive.
+IF current_room = "Main Gate" AND movement_command = "north"
+    SET current_room = "Barracks"
 
-# TODO 6: Show how movement fits into repeated gameplay.
-# The final game continues accepting commands until a required ending occurs.
+ELSE IF current_room = "Barracks" AND movement_command = "south"
+    SET current_room = "Main Gate"
+
+ELSE IF current_room = "Barracks" AND movement_command = "east"
+    SET current_room = "Armory"
+
+ELSE IF current_room = "Barracks" AND movement_command = "west"
+    SET current_room = "Medical Bay"
+
+ELSE IF current_room = "Armory" AND movement_command = "west"
+    SET current_room = "Barracks"
+
+ELSE IF current_room = "Armory" AND movement_command = "north"
+    SET current_room = "Communications Room"
+
+ELSE IF current_room = "Medical Bay" AND movement_command = "east"
+    SET current_room = "Barracks"
+
+ELSE IF current_room = "Medical Bay" AND movement_command = "north"
+    SET current_room = "Supply Warehouse"
+
+ELSE IF current_room = "Supply Warehouse" AND movement_command = "south"
+    SET current_room = "Medical Bay"
+
+ELSE IF current_room = "Supply Warehouse" AND movement_command = "east"
+    SET current_room = "Communications Room"
+
+ELSE IF current_room = "Communications Room" AND movement_command = "west"
+    SET current_room = "Supply Warehouse"
+
+ELSE IF current_room = "Communications Room" AND movement_command = "south"
+    SET current_room = "Armory"
+
+ELSE IF current_room = "Communications Room" AND movement_command = "east"
+    SET current_room = "Command Center"
+
+ELSE IF current_room = "Command Center" AND movement_command = "west"
+    SET current_room = "Communications Room"
+
+ELSE IF current_room = "Command Center" AND movement_command = "east"
+    SET current_room = "Security Wing"
+
+ELSE IF current_room = "Security Wing" AND movement_command = "west"
+    SET current_room = "Command Center"
+
+ELSE
+    OUTPUT "You cannot move in that direction."
+END IF
+
+# TODO 4: Describe what happens when movement is valid.
+
+OUTPUT "You moved to " + current_room + "."
+
+# TODO 5: Check whether the player entered the villain's room.
+
+IF current_room = "Security Wing"
+    OUTPUT "The Infected Commander has found you!"
+    OUTPUT "Game over."
+    SET game_over = TRUE
+END IF
+
+# TODO 6: Continue accepting movement commands until the game ends.
+
+WHILE game_over = FALSE
+
+    OUTPUT "Enter a direction to move: north, south, east, or west."
+    INPUT movement_command
+
+    IF current_room = "Main Gate" AND movement_command = "north"
+        SET current_room = "Barracks"
+
+    ELSE IF current_room = "Barracks" AND movement_command = "south"
+        SET current_room = "Main Gate"
+
+    ELSE IF current_room = "Barracks" AND movement_command = "east"
+        SET current_room = "Armory"
+
+    ELSE IF current_room = "Barracks" AND movement_command = "west"
+        SET current_room = "Medical Bay"
+
+    ELSE IF current_room = "Armory" AND movement_command = "west"
+        SET current_room = "Barracks"
+
+    ELSE IF current_room = "Armory" AND movement_command = "north"
+        SET current_room = "Communications Room"
+
+    ELSE IF current_room = "Medical Bay" AND movement_command = "east"
+        SET current_room = "Barracks"
+
+    ELSE IF current_room = "Medical Bay" AND movement_command = "north"
+        SET current_room = "Supply Warehouse"
+
+    ELSE IF current_room = "Supply Warehouse" AND movement_command = "south"
+        SET current_room = "Medical Bay"
+
+    ELSE IF current_room = "Supply Warehouse" AND movement_command = "east"
+        SET current_room = "Communications Room"
+
+    ELSE IF current_room = "Communications Room" AND movement_command = "west"
+        SET current_room = "Supply Warehouse"
+
+    ELSE IF current_room = "Communications Room" AND movement_command = "south"
+        SET current_room = "Armory"
+
+    ELSE IF current_room = "Communications Room" AND movement_command = "east"
+        SET current_room = "Command Center"
+
+    ELSE IF current_room = "Command Center" AND movement_command = "west"
+        SET current_room = "Communications Room"
+
+    ELSE IF current_room = "Command Center" AND movement_command = "east"
+        SET current_room = "Security Wing"
+
+    ELSE IF current_room = "Security Wing" AND movement_command = "west"
+        SET current_room = "Command Center"
+
+    ELSE
+        OUTPUT "You cannot move in that direction."
+    END IF
+
+    OUTPUT "You moved to " + current_room + "."
+
+    IF current_room = "Security Wing"
+        OUTPUT "The Infected Commander has found you!"
+        OUTPUT "Game over."
+        SET game_over = TRUE
+    END IF
+
+END WHILE
